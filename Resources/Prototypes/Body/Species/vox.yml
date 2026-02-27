@@ -223,11 +223,13 @@
     damageCap: 20
     damage:
       types:
-        #Heat: -0.07 # Trauma
+        # <Trauma> - no passive healing
+        #Heat: -0.07
+        #Blunt: -0.05
+        #Piercing: -0.05
+        #Slash: -0.05
+        # </Trauma>
         Poison: -0.2 # needs to be less than the PendingZombieComponent does or they never become zombies by the disease.
-        #Blunt: -0.02 # Trauma
-        #Piercing: -0.02 # Trauma
-        #Slash: -0.02 # Trauma
   #- type: DamageVisuals # Shitmed
   #  damageOverlayGroups:
   #    Brute:
