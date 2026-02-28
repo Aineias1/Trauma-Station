@@ -3174,3 +3174,14 @@ Entries:
   id: 384
   time: '2026-02-28T14:26:46.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/912
+- author: NoElkaTheGod
+  changes:
+  - type: Add
+    message: >-
+      Cosmic Cult has been significantly reworked. See guidebok and/or the PR
+      for details.
+  - type: Tweak
+    message: Cosmic Cult is back in rotation
+  id: 385
+  time: '2026-02-28T16:00:32.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/854
