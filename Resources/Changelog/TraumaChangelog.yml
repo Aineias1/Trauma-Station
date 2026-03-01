@@ -3324,3 +3324,10 @@ Entries:
   id: 401
   time: '2026-03-01T20:49:22.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/938
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Fixed walking by default setting being inverted.
+  id: 402
+  time: '2026-03-01T21:38:29.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/939
