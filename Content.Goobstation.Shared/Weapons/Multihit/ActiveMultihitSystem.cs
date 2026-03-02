@@ -3,14 +3,11 @@
 using System.Linq;
 using Content.Shared.Damage;
 using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Network;
 
 namespace Content.Goobstation.Shared.Weapons.Multihit;
 
 public sealed class ActiveMultihitSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -23,19 +20,16 @@ public sealed class ActiveMultihitSystem : EntitySystem
         if (!args.IsHit)
             return;
 
-        if (Math.Abs(ent.Comp.DamageMultiplier - 1f) > 0.01f)
+        if (Math.Abs(ent.Comp.NextDamageMultiplier - 1f) < 0.01f)
+            return;
+
+        var modifierSet = new DamageModifierSet
         {
-            var modifierSet = new DamageModifierSet
-            {
-                Coefficients = args.BaseDamage.DamageDict
-                    .Select(x => new KeyValuePair<string, float>(x.Key, ent.Comp.DamageMultiplier))
-                    .ToDictionary(),
-            };
+            Coefficients = args.BaseDamage.DamageDict
+                .Select(x => new KeyValuePair<string, float>(x.Key, ent.Comp.NextDamageMultiplier))
+                .ToDictionary(),
+        };
 
-            args.ModifiersList.Add(modifierSet);
-        }
-
-        RemComp(ent.Owner, ent.Comp);
+        args.ModifiersList.Add(modifierSet);
     }
-
 }

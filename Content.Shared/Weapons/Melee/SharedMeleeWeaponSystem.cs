@@ -2,7 +2,7 @@
 using Content.Goobstation.Common.Weapons;
 using Content.Goobstation.Common.MartialArts;
 using Content.Lavaland.Common.Weapons;
-using Content.Medical.Common.Targeting;
+using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared.Coordinates;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Physics.Components;
@@ -56,9 +56,9 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Trauma -
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly IMapManager MapManager = default!;
-    [Dependency] private   readonly INetManager _netMan = default!;
+    //[Dependency] private   readonly INetManager _netMan = default!; // Trauma - now unused
     [Dependency] private   readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private   readonly IRobustRandom _random = default!;
+    //[Dependency] private   readonly IRobustRandom _random = default!; // Trauma - now unused
     [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
     [Dependency] protected readonly ActionBlockerSystem Blocker = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
@@ -428,6 +428,18 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Trauma -
                     return false;
                 }
 
+                // <Trauma>
+                if (TryComp(target, out TargetInteractionRelayComponent? relay) && relay.RelayMelee &&
+                    Exists(relay.RelayEntity) && relay.RelayEntity.Value != target)
+                {
+                    return AttemptAttack(user,
+                        weaponUid,
+                        weapon,
+                        new LightAttackEvent(GetNetEntity(relay.RelayEntity.Value), light.Weapon, light.Coordinates),
+                        session);
+                }
+                // </Trauma>
+
                 if (!Blocker.CanAttack(user, target, (weaponUid, weapon)))
                     return false;
 
@@ -449,6 +461,17 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Trauma -
                     // Target was lightly attacked & deleted.
                     return false;
                 }
+
+                // <Trauma>
+                if (TryComp(target, out relay) && relay.RelayMelee && Exists(relay.RelayEntity))
+                {
+                    return AttemptAttack(user,
+                        weaponUid,
+                        weapon,
+                        new DisarmAttackEvent(GetNetEntity(relay.RelayEntity.Value), disarm.Coordinates),
+                        session);
+                }
+                // </Trauma>
 
                 if (!Blocker.CanAttack(user, target, (weaponUid, weapon), true))
                     return false;
