@@ -3739,3 +3739,17 @@ Entries:
   id: 442
   time: '2026-03-07T11:40:05.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/1087
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Changed injection skill so it never fails, but instant injectors have a
+      doafter at very low skill and the doafter time for syringes is scaled with
+      skill.
+  - type: Tweak
+    message: >-
+      Re-enabled skill gain, but it's very limited. You can't get much higher
+      than novice for most skills.
+  id: 443
+  time: '2026-03-07T13:13:22.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/1089
