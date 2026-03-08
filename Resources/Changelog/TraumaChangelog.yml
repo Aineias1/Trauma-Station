@@ -3912,3 +3912,10 @@ Entries:
   id: 460
   time: '2026-03-08T18:13:36.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/1127
+- author: GeneRickUsername
+  changes:
+  - type: Fix
+    message: Fixed stamina reduction being applied twice.
+  id: 461
+  time: '2026-03-08T18:15:17.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/980
