@@ -12,6 +12,7 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  - type: ShowSquadIcons # Corvax-SecApartment
   - type: ShowJobIcons
   - type: ShowMindShieldIcons
   - type: ShowCriminalRecordIcons
