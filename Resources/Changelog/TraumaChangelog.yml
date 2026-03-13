@@ -4286,3 +4286,10 @@ Entries:
   id: 502
   time: '2026-03-13T07:31:58.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/1221
+- author: aedler
+  changes:
+  - type: Add
+    message: Self pull removes bolas on you
+  id: 503
+  time: '2026-03-13T11:03:35.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/1210
