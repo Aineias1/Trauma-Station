@@ -1,26 +1,26 @@
 sec-apartment-ui-sec-apartment = SecTrack
-sec-apartment-ui-station = STATION
+sec-apartment-ui-station = Station
 sec-apartment-ui-mark = {$time} | {$station}
-sec-apartment-ui-no-squads-crew = UNASSIGNED PERSONNEL
-sec-apartment-ui-squads-create = CREATE
-sec-apartment-ui-squads-placeholder = ENTER SQUAD NAME...
-sec-apartment-ui-squads = SQUADS
+sec-apartment-ui-no-squads-crew = Unassigned personnel
+sec-apartment-ui-squads-create = Create
+sec-apartment-ui-squads-placeholder = Enter squad name...
+sec-apartment-ui-squads = Squads
 sec-apartment-ui-os = SecApartment#OS ™ v2.20
 sec-apartment-ui-footer = NanoTrasen™ all rights reserved
 
-sec-apartment-ui-squads-nameedit-placeholder = SQUAD NAME...
+sec-apartment-ui-squads-nameedit-placeholder = Squad name...
 sec-apartment-ui-squads-rename = ✎
-sec-apartment-ui-squads-rename-tooltip = RENAME
+sec-apartment-ui-squads-rename-tooltip = Rename
 sec-apartment-ui-squads-save = ✓
-sec-apartment-ui-squads-save-tooltip = RENAME
+sec-apartment-ui-squads-save-tooltip = Rename
 sec-apartment-ui-squads-delete = 🗑
-sec-apartment-ui-squads-delete-tooltip = DELETE
-sec-apartment-ui-squads-status = STATUS:
-sec-apartment-ui-squads-members = SQUAD MEMBERS
-sec-apartment-ui-squads-desc-placeholder = SQUAD DESCRIPTION...
-sec-apartment-ui-squads-desc-edit = REDACT DESCRIPTION
-sec-apartment-ui-squads-desc-save = SAVE
-sec-apartment-ui-squads-location = NEAR
+sec-apartment-ui-squads-delete-tooltip = Delete
+sec-apartment-ui-squads-status = Status:
+sec-apartment-ui-squads-members = Squad members
+sec-apartment-ui-squads-desc-placeholder = Squad description...
+sec-apartment-ui-squads-desc-edit = Edit description
+sec-apartment-ui-squads-desc-save = Save
+sec-apartment-ui-squads-location = Near:
 
 sec-apartment-icon-alpha = ALPHA
 sec-apartment-icon-beta = BETA
@@ -47,31 +47,31 @@ sec-apartment-icon-hi = HI
 sec-apartment-icon-psi = PSI
 sec-apartment-icon-omega = OMEGA
 
-sec-apartment-tab-timers = TIMERS
-sec-apartment-tab-squads = SQUADS
-sec-apartment-unknown = UNKNOWN
-sec-apartment-active = ACTIVE
-sec-apartment-on-break = ON BREAK
+sec-apartment-tab-timers = Timers
+sec-apartment-tab-squads = Squads
+sec-apartment-unknown = Unknown
+sec-apartment-active = Active
+sec-apartment-on-break = On break
 
-sec-apartment-assign-button = ASSIGN
-sec-apartment-assign-no-squads = NO SQUADS
-sec-apartment-assign-select-squad = SELECT SQUAD
+sec-apartment-assign-button = Assign
+sec-apartment-assign-no-squads = No squads
+sec-apartment-assign-select-squad = Select squad
 
-sec-apartment-squad-no-desc = NO DESCRIPTION
-sec-apartment-squad-no-members = NO SQUAD MEMBERS
+sec-apartment-squad-no-desc = No description
+sec-apartment-squad-no-members = No squad members
 sec-apartment-squad-members =
     {$count} { $count ->
-        [1] MEMBER
-        [2] MEMBERS
-        [3] MEMBERS
-        [4] MEMBERS
-       *[other] MEMBERS
+        [1] Member
+        [2] Members
+        [3] Members
+        [4] Members
+       *[other] Members
     }
-sec-apartment-squad-remove-name = REMOVE
-sec-apartment-squad-remove-tooltip = REMOVE FROM SQUAD
+sec-apartment-squad-remove-name = Remove
+sec-apartment-squad-remove-tooltip = Remove from squad
 
-sec-apartment-ui-timers = ACTIVE TIMERS
+sec-apartment-ui-timers = Active timers
 sec-apartment-ui-timers-info = TIMERS ADD AUTOMATICALLY. ERRORS MAY OCCUR DUE TO ENCODING OF THE "COMMON CHANNEL" OF TIMER SIGNALS.
-sec-apartment-ui-timers-remove = REMOVE
-sec-apartment-ui-timers-remove-tooltip = REMOVE TIMER FROM LIST
-sec-apartment-ui-timers-total-time = TOTAL TIME:
+sec-apartment-ui-timers-remove = Remove
+sec-apartment-ui-timers-remove-tooltip = Remove timer from the list
+sec-apartment-ui-timers-total-time = Total time:
