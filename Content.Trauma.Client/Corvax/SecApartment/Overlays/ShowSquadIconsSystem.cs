@@ -3,7 +3,7 @@ using Content.Trauma.Shared.SecTrack;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Overlays;
+namespace Content.Trauma.Client.Overlays;
 
 public sealed class ShowSquadIconsSystem : EquipmentHudSystem<ShowSquadIconsComponent>
 {
