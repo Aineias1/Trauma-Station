@@ -4432,3 +4432,14 @@ Entries:
   id: 520
   time: '2026-03-14T13:51:20.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/1287
+- author: JohnJJohn
+  changes:
+  - type: Add
+    message: Added end credits image for heretic
+  - type: Add
+    message: Added end credits image for image
+  - type: Fix
+    message: Fixed heretic gouls appearing in the end credits (the movie style one)
+  id: 521
+  time: '2026-03-14T14:43:08.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/1289
