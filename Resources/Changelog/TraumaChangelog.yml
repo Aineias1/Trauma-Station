@@ -4542,3 +4542,18 @@ Entries:
   id: 534
   time: '2026-03-15T10:32:31.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/1322
+- author: NoElkaTheGod
+  changes:
+  - type: Fix
+    message: Fixed coscult armor's integrated flashlight
+  - type: Fix
+    message: You can no longer parry when attacking yourself
+  - type: Fix
+    message: Astral razor is no longer affected by coscult's lack of shooting skill
+  - type: Tweak
+    message: >-
+      People converted by cosmic cult can now use cosmic cult gear. Still no
+      abilities, though.
+  id: 535
+  time: '2026-03-15T12:49:53.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/1324
