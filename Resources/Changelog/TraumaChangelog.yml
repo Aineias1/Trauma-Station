@@ -4738,3 +4738,14 @@ Entries:
   id: 556
   time: '2026-03-17T14:08:30.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/1375
+- author: Lumminal
+  changes:
+  - type: Fix
+    message: Shadow demons unable to turn off night vision while in jaunt
+  - type: Fix
+    message: Shadow demons now pulls victims in, instead of throwing themselves
+  - type: Tweak
+    message: Shadow demons get a cooldown when entering jaunt
+  id: 557
+  time: '2026-03-17T14:21:09.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/1379
