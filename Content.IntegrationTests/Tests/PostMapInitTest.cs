@@ -56,16 +56,18 @@ namespace Content.IntegrationTests.Tests
         /// </remarks>
         private static readonly Dictionary<string, HashSet<EntProtoId>> DoNotMapWhitelistSpecific = new()
         {
-            {"/Maps/bagel.yml", ["RubberStampMime"]},
-            {"/Maps/reach.yml", ["HandheldCrewMonitor"]},
+            // <Trauma>
+            {"/Maps/_Goobstation/gate.yml", ["ShuttleGunPerforator"]},
+            {"/Maps/_Goobstation/Nonstations/wizden.yml", ["RubberStampWizard"]},
+            {"/Maps/_Goobstation/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
+            {"/Maps/_Lavaland/Lavaland/ruin_toyshop.yml", ["GoldenBikeHorn", "ClothingHeadHatCatEars"]},
+            {"/Maps/_Trauma/bagel.yml", ["RubberStampMime"]},
+            {"/Maps/_Trauma/kettle.yml", ["RubberStampSyndicate"]}, // exterior rocks loot
+            // </Trauma>
             {"/Maps/Shuttles/ShuttleEvent/honki.yml", ["GoldenBikeHorn", "RubberStampClown"]},
             {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
-            {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
-            // <Trauma>
-            {"/Maps/_Goobstation/gate.yml", ["ShuttleGunPerforator"]},
-            {"/Maps/_Trauma/kettle.yml", ["RubberStampSyndicate"]}, // exterior rocks loot
-            // </Trauma>
+            {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]}
         };
 
         /// <summary>
@@ -77,6 +79,9 @@ namespace Content.IntegrationTests.Tests
         /// </remarks>
         private static readonly string[] DoNotMapWhitelist =
         {
+            // <Trauma>
+            "/Maps/_Goobstation/Shuttles/consul.yml",
+            // </Trauma>
             "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**" // admin gaming
         };
@@ -217,28 +222,6 @@ namespace Content.IntegrationTests.Tests
             {
                 var postMapInit = meta["postmapinit"].AsBool();
                 Assert.That(postMapInit, Is.False, $"Map {map.Filename} was saved postmapinit");
-
-                // <Trauma>
-                // testing that maps have nothing with the DoNotMap entity category
-                // I do it here because it's basically copy-paste code for the most part
-                var yamlEntities = root["entities"];
-                var dnmCategory = protoManager.Index(DoNotMap);
-                Assert.Multiple(() =>
-                {
-                    foreach (var yamlEntity in (YamlSequenceNode) yamlEntities)
-                    {
-                        var protoId = yamlEntity["proto"].AsString();
-                        protoManager.TryIndex(protoId, out var proto, false);
-                        if (proto is null || proto.EditorSuffix is null)
-                            continue;
-                        // Trauma - IsWhitelistedForMap too
-                        if (proto.Categories.Contains(dnmCategory) && !(DoNotMapWhitelist.Contains(map.ToString()) || IsWhitelistedForMap(protoId, map)))
-                        {
-                            Assert.Fail($"\nMap {map} has the DO NOT MAP category in prototype {proto.Name} ({protoId})"); // Trauma - add protoId
-                        }
-                    }
-                });
-                // </Trauma>
             }
 
             var deps = server.ResolveDependency<IEntitySystemManager>().DependencyCollection;
@@ -305,7 +288,7 @@ namespace Content.IntegrationTests.Tests
                         continue;
 
                     Assert.That(!proto.Categories.Contains(dnmCategory) || IsWhitelistedForMap(protoId, map),
-                        $"\nMap {map} contains entities in the DO NOT MAP category ({proto.Name})");
+                        $"\nMap {map} contains entities in the DO NOT MAP category ({proto.Name} {proto.ID})"); // Trauma - add proto.ID
 
                     // The proto id is used on this map, so remove it from the set
                     unusedExemptions.Remove(protoId);
