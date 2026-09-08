@@ -10,28 +10,36 @@
   - MachineMaterialSilo # for main departments
   - MachineMasterMaterialSilo # for cargo to easily distribute mats to department silos
   maps:
+  
+  #LOWPOP MAPS 0-30 PLAYERS
+  
   - Atlas
   - Amber
+  - Cluster
+  - Reach
+  - Omega
+  
   - Bagel
   - Box
-  - Cluster
   - Fland
-  #- Loop # needs full area coverage
   - Marathon
   - Meta
   - Oasis
-  - Omega
   - Origin
-  #- Saltern # DEATH TO SALTERN
   - Packed
-  #- Barratry
   - Kettle
-  #- Submarine
   - Leonid
+  - Cog
+  
+  
+  #DEROTATED MAPS
+  
+  #- Loop # needs full area coverage
+  #- Saltern # DEATH TO SALTERN
+  #- Barratry
+  #- Submarine
   #- Delta # decals are overlapping everywhere and have Z fighting
   #- Chloris
-  - Cog
-  - Reach
   #- Serpentcrest
   #- Nume # slop
   #- Freighter #people hate it
