@@ -18,19 +18,23 @@
   - Cluster
   - Reach
   - Omega
+  - Packed
+
+  #MIDPOP MAPS 30-60 PLAYERS
   
   - Bagel
   - Box
-  - Fland
   - Marathon
   - Meta
+  - Kettle
+  - Cog
+
+  #HIGHPOP MAPS 60-90 PLAYERS
+
+  - Fland
   - Oasis
   - Origin
-  - Packed
-  - Kettle
-  - Leonid
-  - Cog
-  
+  - Leonid 
   
   #DEROTATED MAPS
   
