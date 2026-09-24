@@ -29,7 +29,7 @@ using Content.Shared.Popups;
 using Content.Shared.Pulling.Events;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Stunnable;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
@@ -647,10 +647,7 @@ namespace Content.Shared.Cuffs
 
             if (isOwner)
             {
-                if (!TryComp(cuff, out UseDelayComponent? useDelay))
-                    return;
-
-                if (!_delay.TryResetDelay((cuff, useDelay), true))
+                if (!_delay.TryResetDelay(cuff.Owner, true))
                 {
                     return;
                 }
@@ -737,8 +734,13 @@ namespace Content.Shared.Cuffs
                 if (cuff.BreakOnRemove)
                 {
                     QueueDel(cuffsToRemove);
-                    var trash = Spawn(cuff.BrokenPrototype, Transform(cuffsToRemove).Coordinates);
-                    _hands.PickupOrDrop(user, trash);
+                    // <Trauma> - don't try to spawn anything if BrokenPrototype is null
+                    if (cuff.BrokenPrototype is {} broken)
+                    {
+                        var trash = Spawn(broken, Transform(cuffsToRemove).Coordinates);
+                        _hands.PickupOrDrop(user, trash);
+                    }
+                    // </Trauma>
                 }
                 else
                 {
